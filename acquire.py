@@ -159,7 +159,7 @@ def get_blog_articles2(base_url, categories): # title_finder, body_finder
             dictionary = {'title': title,
                          'content': body,
                          'category': category}
-            
+             
             # add dictionary to list of dictionaries
             article_list.append(dictionary)
         
