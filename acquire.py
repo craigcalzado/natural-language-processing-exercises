@@ -16,7 +16,7 @@ def parse_gulde_news():
     """ returns dataframe of scraped web-scraping-demo.zgulde.net/news """
     # set url
     url = 'https://web-scraping-demo.zgulde.net/news' 
-    agent = 'codeup ds germain'
+    agent = 'codeup ds innis'
     # query
     response = requests.get(url, headers={'User-Agent': agent}) 
     # soup
@@ -43,7 +43,7 @@ def parse_gulde_people():
     """ returns dataframe of scraped web-scraping-demo.zgulde.net/people """
     # set url
     url = 'https://web-scraping-demo.zgulde.net/people' 
-    agent = 'codeup ds germain'
+    agent = 'codeup ds innis'
     # query
     response = requests.get(url, headers={'User-Agent': agent}) 
     # soup
@@ -96,7 +96,7 @@ def acquire_codeup_blog(url):
     """ returns dict of one codeup blog's title, date, category, and content """
     
     # set agent
-    agent = 'codeup ds Innis'
+    agent = 'codeup ds innis'
     
     # query
     response = requests.get(url, headers={'User-Agent': agent})
@@ -114,8 +114,7 @@ def acquire_codeup_blog(url):
     category = soup.find_all('a', {'rel':'category tag'})[0].text
     
     # grab all unformatted paragraphs
-    paragraphs = soup.find_all('div', {'class':'et_pb_module et_pb_post_content et_pb_post_content_0_tb_body'})[0]\
-    .find_all('p')
+    paragraphs = soup.find_all('div', {'class':'et_pb_module et_pb_post_content et_pb_post_content_0_tb_body'})[1].find_all('p')
     
     # create list for formatted paragraphs
     paragraph_list = []
@@ -170,7 +169,7 @@ def get_article(article, category):
 def get_article1(url):
     """ return dataframe of articles in inshorts category URL """
     # set agent
-    agent = 'codeup ds germain' 
+    agent = 'codeup ds innis' 
     # query
     response = requests.get(url, headers={'User-Agent': agent}) 
     # soup
