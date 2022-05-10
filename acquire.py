@@ -96,7 +96,7 @@ def acquire_codeup_blog(url):
     """ returns dict of one codeup blog's title, date, category, and content """
     
     # set agent
-    agent = 'codeup ds germain'
+    agent = 'codeup ds Innis'
     
     # query
     response = requests.get(url, headers={'User-Agent': agent})
@@ -142,6 +142,7 @@ def get_blogs():
     list_of_blog_dicts = []
     for url in codeup_blog_urls():
         list_of_blog_dicts.append(acquire_codeup_blog(url))
+
     return pd.DataFrame(list_of_blog_dicts)
 
 #####################################
@@ -273,14 +274,14 @@ def get_articles(category, base ="https://inshorts.com/en/read/"):
     # Return the list of dictionaries
     return output
 
-#def get_blog_articles(url):
+def get_blog_articles(url):
     '''
     This function takes in a url and pull the necessary elements off the website
     then creates a dictionary with those elements
     '''
 
     # create an empty dictionary to append to
-    blog_dict = {}
+    #  blog_dict = {}
     
     # fetch the data
     headers = {'User-Agent': 'Codeup Data Science'}
