@@ -164,3 +164,4 @@ def get_blog_articles2(base_url, categories): # title_finder, body_finder
             article_list.append(dictionary)
         
     return pd.DataFrame(article_list)
+    
